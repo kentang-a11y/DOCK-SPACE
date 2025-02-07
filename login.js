@@ -53,7 +53,7 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
             // Redirect based on user type
             setTimeout(function() {
                 if (userType === 'employee') {
-                    window.location.href = 'Dashboard.html'; // Redirect to employee page
+                    window.location.href = 'dashboard.html'; // Redirect to employee page
                 } else if (userType === 'customer') {
                     window.location.href = 'menu.html'; // Redirect to customer page
                 }
