@@ -67,19 +67,19 @@
       ships.forEach(ship => {
         const dockingDate = new Date(ship.stayStart); // Use stayStart for docking date
         if (dockingDate < today) {
-          ship.status = 'Completed'; // If the ship has already docked
+          ship.status = 'In Progress'; // If the ship has already docked
         } else if (dockingDate.toDateString() === today.toDateString()) {
           ship.status = 'In Progress'; // If the ship is docking today
         } else {
-          ship.status = 'Pending'; // If the ship is docking in the future
+          ship.status = 'Waiting'; // If the ship is docking in the future
         }
       });
     }
 
     // Retrieve ship data from local storage
     var dokSemarangData = JSON.parse(localStorage.getItem('ships_smg')) || [];
-    var dokIrianData = JSON.parse(localStorage.getItem('ships_sby')) || [];
-    var dokSurabayaData = JSON.parse(localStorage.getItem('ships')) || [];
+    var dokIrianData = JSON.parse(localStorage.getItem('ships')) || [];
+    var dokSurabayaData = JSON.parse(localStorage.getItem('ships_sby')) || [];
 
     // Update statuses for each dock
     updateShipStatus(dokSemarangData);
